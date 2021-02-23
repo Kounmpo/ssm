@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--configuration核心配置文件-->
+<configuration>
+    <!--    使用标准日志输出-->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <setting name="cacheEnabled" value="true"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <typeAliases>
+        <package name="com.hui.domain"/>
+    </typeAliases>
+    <mappers>
+<!--        name是包名，这个包中的所有mapper.xml一次性都能加载
+使用package的要求：
+1.mapper文件名必须与dao接口一致
+2.mapper文件必须与dao接口在同一目录下-->
+        <package name="com.hui.dao"/>
+    </mappers>
+</configuration>
